@@ -1,0 +1,28 @@
+<header>
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <!-- Logo -->
+            <a href="/" class="logo">STORE</a>
+
+            <!-- Menu -->
+            <ul class="menu">
+                <li><a href="/">Trang chủ</a></li>
+                <li><a href="/products">Sản phẩm</a></li>
+                <li><a href="/suppliers">Nhà cung cấp</a></li>
+
+                <% if (session && session.userId) { %>
+                    <li><a href="/auth/logout" class="btn-logout">Thoát</a></li>
+                    <% } else { %>
+                        <li><a href="/auth/login">Đăng nhập</a></li>
+                        <li><a href="/auth/register">Đăng ký</a></li>
+                        <% } %>
+            </ul>
+
+            <!-- Search -->
+            <form action="/products" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Tìm sản phẩm...">
+                <button type="submit">Tìm</button>
+            </form>
+        </div>
+    </nav>
+</header>

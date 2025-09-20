@@ -1,0 +1,23 @@
+<h2>
+    <%= product && product._id ? "Edit Product" : "Add Product" %>
+</h2>
+
+<form action="<%= product && product._id ? '/products/' + product._id + '/edit' : '/products/create' %>" method="POST">
+    <input type="text" name="name" placeholder="Name" value="<%= product.name || '' %>" required>
+    <br>
+    <input type="number" name="price" placeholder="Price" value="<%= product.price || '' %>" required>
+    <br>
+    <input type="number" name="quantity" placeholder="Quantity" value="<%= product.quantity || '' %>">
+    <br>
+    <textarea name="description" placeholder="Description"><%= product.description || '' %></textarea>
+
+    <select name="supplier" required>
+    <% suppliers.forEach(s => { %>
+      <option value="<%= s._id %>" <%= product.supplier && product.supplier.toString() === s._id.toString() ? "selected" : "" %>>
+        <%= s.name %>
+      </option>
+    <% }) %>
+  </select>
+
+    <button type="submit">Save</button>
+</form>

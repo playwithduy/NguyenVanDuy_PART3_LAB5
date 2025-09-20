@@ -1,0 +1,35 @@
+<h2>Product List</h2>
+
+<!-- Form tìm kiếm -->
+<form method="GET" action="/products">
+    <input type="text" name="q" placeholder="Search by name" value="<%= q || '' %>">
+    <select name="supplier" onchange="this.form.submit()">
+    <option value="">-- All Suppliers --</option>
+    <% suppliers.forEach(s => { %>
+      <option value="<%= s._id %>" <%= supplier && supplier.toString() === s._id.toString() ? "selected" : "" %>>
+        <%= s.name %>
+      </option>
+    <% }) %>
+  </select>
+    <button type="submit">Search</button>
+</form>
+
+<% if (user) { %>
+    <a href="/products/create">Add Product</a>
+    <% } %>
+
+        <ul>
+            <% products.forEach(p => { %>
+                <li>
+                    <%= p.name %> -
+                        <%= p.price %> -
+                            <%= p.supplier ? p.supplier.name : "No supplier" %>
+                                <% if (user) { %>
+                                    | <a href="/products/<%= p._id %>/edit">Edit</a>
+                                    <form action="/products/<%= p._id %>/delete" method="POST" style="display:inline">
+                                        <button type="submit" onclick="return confirm('Are you sure?')">Delete</button>
+                                    </form>
+                                    <% } %>
+                </li>
+                <% }) %>
+        </ul>

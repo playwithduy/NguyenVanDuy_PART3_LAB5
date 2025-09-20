@@ -1,0 +1,10 @@
+<h2>
+    <%= supplier && supplier._id ? "Sửa nhà cung cấp" : "Thêm nhà cung cấp" %>
+</h2>
+
+<form action="<%= supplier && supplier._id ? '/suppliers/' + supplier._id + '/edit' : '/suppliers/create' %>" method="POST" class="form">
+    <input type="text" name="name" placeholder="Tên nhà cung cấp" value="<%= supplier.name || '' %>" required>
+    <input type="text" name="address" placeholder="Địa chỉ" value="<%= supplier.address || '' %>">
+    <input type="text" name="phone" placeholder="Số điện thoại" value="<%= supplier.phone || '' %>">
+    <button type="submit">Lưu</button>
+</form>

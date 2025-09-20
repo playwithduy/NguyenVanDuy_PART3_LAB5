@@ -1,0 +1,2 @@
+Website được xây dựng nhằm quản lý thông tin nhà cung cấp, sản phẩm, và người dùng.
+Người dùng có thể tìm kiếm, đăng ký tài khoản, đăng nhập, quản lý thông tin cá nhân, đồng thời có trang quản trị cho phép quản lý nhà cung cấp và sản phẩm với đầy đủ chức năng CRUD.

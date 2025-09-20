@@ -1,0 +1,122 @@
+/* Reset cơ bản */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f9;
+    color: #3d3f42;
+}
+
+
+/* Navbar */
+
+.navbar {
+    background: #2c3e50;
+    padding: 12px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.menu li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+    font-weight: 500;
+}
+
+.menu li a:hover {
+    background: #34495e;
+    color: #fff;
+}
+
+.btn-logout {
+    background: #e74c3c;
+    color: white !important;
+}
+
+.btn-logout:hover {
+    background: #c0392b;
+}
+
+
+/* Search form */
+
+.search-form {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+    width: 180px;
+}
+
+.search-form button {
+    padding: 8px 14px;
+    border: none;
+    background: #0e0ae0;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-form button:hover {
+    background: #1223e2;
+}
+
+
+/* Content chính */
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    background: #2c3e50;
+    color: #bdc3c7;
+}
